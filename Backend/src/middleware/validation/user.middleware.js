@@ -58,7 +58,6 @@ const registerValidation = async (req, res, next) => {
   }
   return next();
 };
-
 const loginValidation = async (req, res, next) => {
   const error = {
     success: true,

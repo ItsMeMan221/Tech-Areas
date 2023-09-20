@@ -11,6 +11,7 @@ import {
   changePasswordValidation,
   loginValidation,
   registerValidation,
+  updateUserValidation,
 } from "../middleware/validation/user.middleware.js";
 import { verifyTokenUser } from "../middleware/auth/token.middleware.js";
 
@@ -20,7 +21,7 @@ userRoutes.post("/register", registerValidation, registerUser);
 userRoutes.post("/login", loginValidation, loginUser);
 userRoutes.post("/refresh-token", refresh_token);
 userRoutes.get("/:id", verifyTokenUser, getProfile);
-userRoutes.put("/:id", verifyTokenUser, updateProfile);
+userRoutes.put("/:id", verifyTokenUser, updateUserValidation, updateProfile);
 userRoutes.patch(
   "/:id",
   verifyTokenUser,
